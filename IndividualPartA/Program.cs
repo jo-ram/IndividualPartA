@@ -82,10 +82,11 @@ namespace IndividualPartA
                    "7.Add assignments\n   " +
                    "8.Add trainer\n   " +
                    "9.Assign student to course\n   " +
-                   "10.Assign trainer to courser\n   " +
-                   "11.Assign assignment to courser\n   " +
+                   "10.Assign trainer to course\n   " +
+                   "11.Assign assignment to course\n   " +
                    "12.List of students per course\n   " +
                    "13.List of trainers per course\n   " +
+                   "14.List of assignments per course\n   " +
                    "0.Exit");
                 Console.WriteLine("--------------------------------------------");
                 input = Console.ReadLine();
@@ -267,7 +268,7 @@ namespace IndividualPartA
                     else
                     {
                         Console.WriteLine("Course found");
-                        Console.WriteLine("Give assignement name ");
+                        Console.WriteLine("Give assignment name ");
                         string title = Console.ReadLine();
                         
 
@@ -300,6 +301,15 @@ namespace IndividualPartA
                     {
                         Console.WriteLine(course.GetTitle());
                         course.PrintTrainersPerCourse();
+                    }
+                }
+
+                if (input == "14")
+                {
+                    foreach (Course course in courses)
+                    {
+                        Console.WriteLine(course.GetTitle());
+                        course.PrintAssignmentsPerCourse();
                     }
                 }
 
